@@ -1,6 +1,6 @@
 import random
 
-colum = random.randint(3,20)
+colum = random.randint(3, 20)
 string = ''
 
 
