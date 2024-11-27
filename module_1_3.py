@@ -1,8 +1,26 @@
-name = str('Name:Vladimir')              # Переменной name присваеваем значение имени
-print (name)                             # Выводим значение переменной name на экран
-age = int(31)                            # Создаем переменную age присваеваем значение возраста(целое число:int)
-print ('Age:',age)                       # Выводим значение переменной age на экран
-age = int(32)                            # Присваеваем переменной age новое значение(целое число:int)
-print ('New age:',age)                   # Выводим измененное значение переменной age на экран
-is_student = (age>=age)                  # Cоздаем переменную is_studtent присваеваем ей логическое значение (True)
-print ('Is Student:',is_student)         # Выводим значение переменной is_student на экран
+
+calls = 0
+
+
+def count_calls():
+    global calls
+    calls+=1
+
+def string_info(string):
+    count_calls()
+    length = len(string)
+    upper_case = string.upper()
+    lower_case = string.lower()
+    return (length, upper_case, lower_case)
+
+
+
+def is_contains(string,list_to_search):
+    count_calls()
+    string_lower = string.lower()
+    return string_lower in (item.lower() for item in list_to_search)
+print(string_info("Capybara"))
+print(string_info('Armageddon'))
+print (is_contains("Студент", ["привет", "Студент", "Urban"]))
+print (is_contains("Student", ["привет", "Студент", "Urban"]))
+print(calls)
